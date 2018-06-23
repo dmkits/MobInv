@@ -58,8 +58,8 @@ function onkeypressFunction(keyCode){
   }
 }
 
-function createTableRow(){
-  var barcode=$$("#barCodeInput").val();
+function createTableRow(barcode){
+  if(!barcode) barcode=$$("#barCodeInput").val();
   if(document.getElementById(barcode)){
     document.getElementById(barcode).innerText=parseInt(document.getElementById(barcode).innerText)+1;
     document.getElementById("barCodeInput").value='';
@@ -247,3 +247,6 @@ function focusBarcodeInput(){
   });
   $$('#barCodeInput').focus();
 };
+
+
+

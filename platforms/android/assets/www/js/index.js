@@ -30,15 +30,18 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-
         cordova.plugins.
             CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
 
         cordova.plugins.
             CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
                 alert(data);
+                createTableRow(data);
             });
     }
+
+
+
 };
 
 app.initialize();
