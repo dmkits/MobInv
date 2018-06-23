@@ -54,15 +54,13 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 
 var rowNum=1;
-//function onkeypressFunction(keyCode){
-//  if(keyCode==13){
-//    createTableRow();
-//  }
-//}
 
 function createTableRow(barcode){
-  //if(!barcode) barcode=$$("#barCodeInput").val();
-  if(!barcode)return alert("Не удалось считать код");
+  if(!barcode){
+    app7.dialog.alert("Не удалось считать код", "Внимание");
+    return;
+  }
+  //alert("Не удалось считать код");
   if(document.getElementById(barcode)){
     document.getElementById(barcode).innerText=parseInt(document.getElementById(barcode).innerText)+1;
     document.getElementById("barCodeInput").value='';
@@ -162,12 +160,8 @@ function showRealQtyFunction(cell,displayedQty, prodName){
     text:prodName,
     on:{
       open:function(){
-      //  unfocusBarcodeInput();
         document.getElementById("inputRealQty").focus();
       },
-    //  close:function(){
-    //    focusBarcodeInput()
-    //  }
     },
     buttons:[
       {
@@ -236,19 +230,7 @@ function setUserloginData(username){
   $$('#my-login-screen [name="username"]').val(username);
 }
 
-//function unfocusBarcodeInput(){
-//  $$('#barCodeInput').prop("alwaysInFocus", false);
-//}
 
-//function focusBarcodeInput(){
-//  $$('#barCodeInput').prop("alwaysInFocus", true);
-//  $$('#barCodeInput').on('blur', '#barCodeInput', function(e){
-//    if($$('#barCodeInput').prop("alwaysInFocus")){
-//      $$('#barCodeInput').focus();
-//    }
-//  });
-//  $$('#barCodeInput').focus();
-//};
 
 
 

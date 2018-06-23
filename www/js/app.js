@@ -56,7 +56,11 @@ $$('#my-login-screen .login-button').on('click', function () {
 var rowNum=1;
 
 function createTableRow(barcode){
-  if(!barcode)return alert("Не удалось считать код");
+  if(!barcode){
+    app7.dialog.alert("Не удалось считать код", "Внимание");
+    return;
+  }
+  //alert("Не удалось считать код");
   if(document.getElementById(barcode)){
     document.getElementById(barcode).innerText=parseInt(document.getElementById(barcode).innerText)+1;
     document.getElementById("barCodeInput").value='';
