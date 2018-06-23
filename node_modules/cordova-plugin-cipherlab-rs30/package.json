@@ -1,0 +1,52 @@
+{
+  "_from": "git+https://github.com/mribbons/cordova-plugin-cipherlab-rs30.git",
+  "_id": "cordova-plugin-cipherlab-rs30@1.0.0",
+  "_inBundle": false,
+  "_location": "/cordova-plugin-cipherlab-rs30",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30",
+    "rawSpec": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30",
+    "saveSpec": "git+https://github.com/mribbons/cordova-plugin-cipherlab-rs30.git",
+    "fetchSpec": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/mribbons/cordova-plugin-cipherlab-rs30.git#c8152c09aee1b6ad91690a9bfcb59ce2daba36bd",
+  "_spec": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30",
+  "_where": "/home/ianagez/CordovaProjects/Scantest2",
+  "author": {
+    "name": "Michael Ribbons"
+  },
+  "bugs": {
+    "url": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-cipherlab-rs30",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Apache Cordova Barcode Scanner Plugin for Cipherlab RS30",
+  "homepage": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30#readme",
+  "keywords": [
+    "cordova",
+    "barcodescanner",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-cipherlab"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-cipherlab-rs30",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mribbons/cordova-plugin-cipherlab-rs30.git"
+  },
+  "version": "1.0.0"
+}
