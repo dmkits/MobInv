@@ -5,8 +5,10 @@ var $$ = Dom7;
 var app7  = new Framework7({
   root: '#app', // app7 root element
   theme: 'auto', // Automatic theme detection
-  routes: routes
+  routes: routes,
+  workingDoc:null
 });
+
 
  //Init/Create main view
 var mainView = app7.views.create('.view-main', {
@@ -52,17 +54,19 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 
 var rowNum=1;
-function onkeypressFunction(keyCode){
-  if(keyCode==13){
-    createTableRow();
-  }
-}
+//function onkeypressFunction(keyCode){
+//  if(keyCode==13){
+//    createTableRow();
+//  }
+//}
 
 function createTableRow(barcode){
-  if(!barcode) barcode=$$("#barCodeInput").val();
+  //if(!barcode) barcode=$$("#barCodeInput").val();
+  if(!barcode)return alert("Не удалось считать код");
   if(document.getElementById(barcode)){
     document.getElementById(barcode).innerText=parseInt(document.getElementById(barcode).innerText)+1;
     document.getElementById("barCodeInput").value='';
+    setTotalQty();
     return;
   }
   var mainTable=document.getElementById('inventoryTable');
@@ -75,8 +79,6 @@ function createTableRow(barcode){
   tdRowNum.innerText=rowNum.toString();
   tdRowNum.className='text-centered';
 
-  //tdProdName.style.overflow="hidden";        //white-space: nowrap
-  //tdProdName.style.whiteSpace="nowrap";
 
   tdProdName.innerText="Товар со штрих-кодом"+barcode;
   tdProdName.className="blue-text";
@@ -144,11 +146,11 @@ function setTotalQty(){
   var totalrealQty=0;
 
   for(var tdIndex=0; tdIndex<refQtylist.length; tdIndex++){
-    totalrealQty+=parseInt(refQtylist[tdIndex].innerHTML);
-    totalrefQty+=parseInt(realQtylist[tdIndex].innerHTML);
+    totalrealQty+=parseInt(realQtylist[tdIndex].innerHTML);
+    totalrefQty+=parseInt(refQtylist[tdIndex].innerHTML);
   }
-  document.getElementById("totalDocQty").innerHTML=totalrealQty;
-  document.getElementById("totalRealQty").innerHTML=totalrefQty;
+  document.getElementById("totalDocQty").innerHTML=totalrefQty;
+  document.getElementById("totalRealQty").innerHTML=totalrealQty;
 }
 
 function showRealQtyFunction(cell,displayedQty, prodName){
@@ -160,12 +162,12 @@ function showRealQtyFunction(cell,displayedQty, prodName){
     text:prodName,
     on:{
       open:function(){
-        unfocusBarcodeInput();
+      //  unfocusBarcodeInput();
         document.getElementById("inputRealQty").focus();
       },
-      close:function(){
-        focusBarcodeInput()
-      }
+    //  close:function(){
+    //    focusBarcodeInput()
+    //  }
     },
     buttons:[
       {
@@ -234,19 +236,19 @@ function setUserloginData(username){
   $$('#my-login-screen [name="username"]').val(username);
 }
 
-function unfocusBarcodeInput(){
-  $$('#barCodeInput').prop("alwaysInFocus", false);
-}
+//function unfocusBarcodeInput(){
+//  $$('#barCodeInput').prop("alwaysInFocus", false);
+//}
 
-function focusBarcodeInput(){
-  $$('#barCodeInput').prop("alwaysInFocus", true);
-  $$('#barCodeInput').on('blur', '#barCodeInput', function(e){
-    if($$('#barCodeInput').prop("alwaysInFocus")){
-      $$('#barCodeInput').focus();
-    }
-  });
-  $$('#barCodeInput').focus();
-};
+//function focusBarcodeInput(){
+//  $$('#barCodeInput').prop("alwaysInFocus", true);
+//  $$('#barCodeInput').on('blur', '#barCodeInput', function(e){
+//    if($$('#barCodeInput').prop("alwaysInFocus")){
+//      $$('#barCodeInput').focus();
+//    }
+//  });
+//  $$('#barCodeInput').focus();
+//};
 
 
 

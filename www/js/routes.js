@@ -13,17 +13,22 @@ routes = [
       pageAfterIn: function (event, page) {
 
         $$(document).on('click','#enterRowButton' ,function(){
-          createTableRow();
+          createTableRow($$("#barCodeInput").val());
         });
 
+        $$("#app").prop("data-workingDoc", "inventory");
+
+        //$$("#app").addClass("inventory");
+
+        //$$(document).workingDoc="";
         //$$('#barCodeInput').on('blur', '#barCodeInput', function(e){
         //  $$(e.target).focus();
         //});
-        focusBarcodeInput();
+        //focusBarcodeInput();
 
-        $$(document).on('keypress', '#barCodeInput',function(event){
-          onkeypressFunction(event.keyCode);
-        });
+        //$$(document).on('keypress', '#barCodeInput',function(event){
+        //  onkeypressFunction(event.keyCode);
+        //});
 
 
 

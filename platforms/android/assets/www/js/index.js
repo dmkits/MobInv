@@ -20,28 +20,58 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener( 'pause', this.onPause.bind( this ), false );
+        document.addEventListener('resume', this.onResume.bind(this), false);
     },
     // deviceready Event Handler
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        alert("deviceready");
         this.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        cordova.plugins.
-            CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
+        activateScanReader();
+    },
 
-        cordova.plugins.
-            CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
-                alert(data);
-                createTableRow(data);
-            });
+    onPause:function(){
+        disActivateScanReader();
+        //alert("onPause");
+    },
+    onResume:function(){
+        activateScanReader();
+        //alert("onResume");
     }
-
-
 
 };
 
 app.initialize();
+
+function activateScanReader(){
+    cordova.plugins.
+        CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
+
+    cordova.plugins.
+        CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
+            alert('workingDoc='+document.getElementById("app")['data-workingDoc']);
+            if(document.getElementById("app")['data-workingDoc'] =='inventory'){
+                alert(data);
+                createTableRow(data);
+            }
+        });
+
+    //window.onbeforeunload = function () {
+    //    alert("onbeforeunload");
+    //    disActivateScanReader();
+    //   // disActivateScanReader();
+    //    //cordova.plugins.CipherlabRS30CordovaPlugin.destroy(function () {
+    //    //alert("destroyed");});
+    //}
+}
+
+function disActivateScanReader(){
+    cordova.plugins.CipherlabRS30CordovaPlugin.destroy(function () {
+    alert("destroyed");});
+}

@@ -20,6 +20,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener( 'pause', this.onPause.bind( this ), false );
+        document.addEventListener('resume', this.onResume.bind(this), false);
     },
     // deviceready Event Handler
     //
@@ -30,15 +32,33 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        cordova.plugins.
-            CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
+        activateScanReader();
+    },
 
-        cordova.plugins.
-            CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
-                createTableRow(data);
-            });
+    onPause:function(){
+        disActivateScanReader();
+    },
+    onResume:function(){
+        activateScanReader();
     }
 
 };
 
 app.initialize();
+
+function activateScanReader(){
+    cordova.plugins.
+        CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
+
+    cordova.plugins.
+        CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
+            if(document.getElementById("app")['data-workingDoc'] =='inventory'){
+                createTableRow(data);
+            }
+        });
+}
+
+function disActivateScanReader(){
+    cordova.plugins.CipherlabRS30CordovaPlugin.destroy(function () {
+    alert("destroyed");});
+}
