@@ -1,8 +1,16 @@
 {
-  "cordova-plugin-keyboard": {
+  "cordova-android-support-gradle-release": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-keyboard@^1.2.0"
+      "id": "cordova-android-support-gradle-release"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.jkt.zebra.barcode.plugin": {
+    "source": {
+      "type": "registry",
+      "id": "zebra_barcode_plugin@0.0.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -10,15 +18,7 @@
   "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-whitelist@^1.3.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-cipherlab-rs30": {
-    "source": {
-      "type": "registry",
-      "id": "https://github.com/mribbons/cordova-plugin-cipherlab-rs30"
+      "id": "cordova-plugin-whitelist@1.3.3"
     },
     "is_top_level": true,
     "variables": {}

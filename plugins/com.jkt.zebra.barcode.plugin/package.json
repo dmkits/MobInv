@@ -1,0 +1,50 @@
+{
+  "_from": "zebra_barcode_plugin@0.0.1",
+  "_id": "zebra_barcode_plugin@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-/IALgqYMwOljZjurhbc+vrOM650=",
+  "_location": "/zebra_barcode_plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "zebra_barcode_plugin@0.0.1",
+    "name": "zebra_barcode_plugin",
+    "escapedName": "zebra_barcode_plugin",
+    "rawSpec": "0.0.1",
+    "saveSpec": null,
+    "fetchSpec": "0.0.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/zebra_barcode_plugin/-/zebra_barcode_plugin-0.0.1.tgz",
+  "_shasum": "fc800b82a60cc0e963663bab85b73ebeb38ceb9d",
+  "_spec": "zebra_barcode_plugin@0.0.1",
+  "_where": "/home/ianagez/CordovaProjects/Scantest2",
+  "author": {
+    "name": "jktmobility"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com.jkt.zebra.barcode.plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "this plugin is used for zebra device TC8000 for reading barcode",
+  "homepage": "https://bitbucket.org/jkt_android/zebra-tc8000-barcode-plugin#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "public",
+  "name": "zebra_barcode_plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://divyanshujain1312@bitbucket.org/jkt_android/zebra-tc8000-barcode-plugin.git"
+  },
+  "version": "0.0.1"
+}

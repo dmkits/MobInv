@@ -28,37 +28,52 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        //alert("deviceready");
         this.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        activateScanReader();
+        //var ZebraBarcodePlugin=require('zebra_barcode_plugin');
+        alert("deviceready");
+        //alert("ZebraBarcodePlugin="+ZebraBarcodePlugin);
+        //alert("ZebraBarcodePlugin JSON="+JSON.stringify(ZebraBarcodePlugin));
+
+        cordova.plugins.
+        ZebraBarcodePlugin.startHardKeyRead(function (data) {
+                if(document.getElementById("app")['data-workingDoc'] =='inventory'){
+                    createTableRow(data);
+                }
+            });
+
+        //activateScanReader();
     },
 
     onPause:function(){
-        disActivateScanReader();
+        //disActivateScanReader();
     },
     onResume:function(){
-        activateScanReader();
+        //activateScanReader();
     }
 
 };
 
 app.initialize();
 
-function activateScanReader(){
-    cordova.plugins.
-        CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
+//function activateScanReader(){
+//
+//
+//    //cordova.plugins.
+//    //    CipherlabRS30CordovaPlugin.initialise(/* there is no callback here */);
+//    //
+//    cordova.plugins.
+//        CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
+//            if(document.getElementById("app")['data-workingDoc'] =='inventory'){
+//                createTableRow(data);
+//            }
+//        });
+//}
 
-    cordova.plugins.
-        CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
-            if(document.getElementById("app")['data-workingDoc'] =='inventory'){
-                createTableRow(data);
-            }
-        });
-}
-
-function disActivateScanReader(){
-    cordova.plugins.CipherlabRS30CordovaPlugin.destroy(function () {
-    alert("destroyed");});
-}
+//function disActivateScanReader(){
+//    cordova.plugins.CipherlabRS30CordovaPlugin.destroy(function () {
+//    alert("destroyed");});
+//}
