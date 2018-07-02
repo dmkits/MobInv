@@ -71,7 +71,7 @@ function createTableRow(barcode){
     return;
   }
   var mainTable=document.getElementById('inventoryTable');
-  var tbody=document.createElement('tr');
+  var tbody=document.createElement('tbody');
 
   var trHigher=document.createElement('tr');
   var tdRowNum=document.createElement('td');

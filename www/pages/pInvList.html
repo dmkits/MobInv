@@ -51,70 +51,20 @@
         </div>
     </div>
 
-    <div class="page" >
+    <div class="page">
         <div class="page-content">
+            <table id="pInvListHeaderTable" style="position:fixed; top:104px; z-index: 100;width:100%">
+                <thead>
+                <tr  id="pInvListTableHeader">
+                    <th id="pinvNum" style="width:33%; padding: 0 5px 0 5px;">Номер / Дата</th>
+                    <th id="pInvListDocQty" style="width:33%;">Учетное кол-во</th>
+                    <th id="pInvListRealQty" style="width:33%;">Факт. кол-во</th>
+                </tr>
+                </thead>
+            </table>
 
-            <!--<div class="block-title">Open in Mondal</div>-->
-            <!--<div class="list no-hairlines-md">-->
-                <!--<ul>-->
-                    <!--<li>-->
-                        <!--<div class="item-content item-input">-->
-                            <!--<div class="item-inner">-->
-                                <!--<div class="item-input-wrap">-->
-                                    <!--<input type="text" placeholder="Выберите период" readonly id="demo-calendar-modal"/>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-
-
-            <!--&lt;!&ndash;infinite-scroll-content&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<div class="block">&ndash;&gt;-->
-            <!--&lt;!&ndash;<p class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;<input  autofocus type="text" name="name" id="barCodeInput" onkeypress="onkeypressFunction(event.keyCode)" placeholder="Штрихкод товара">&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;onblur="this.focus()"&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;<span>&ndash;&gt;-->
-            <!--&lt;!&ndash;<button class="col button button-raised button-round" onclick="createTableRow()">+</button>&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;enterBarCode()&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;</span>&ndash;&gt;-->
-            <!--&lt;!&ndash;</p>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-            <!--<table id="tableWithFixedHead" style="position:fixed; top:104px; z-index: 100">-->
-                <!--&lt;!&ndash;style="width:100%;position:fixed; top:104px; z-index: 100"&ndash;&gt;-->
-                <!--&lt;!&ndash;style="width:calc(100% - 10px); margin-bottom: 60px;&ndash;&gt;-->
-
-                <!--<thead>-->
-                <!--<tr  id="tableFixedHeader">-->
-                    <!--<th id="num_td" style="width:50px;">№ п/п</th>-->
-                    <!--&lt;!&ndash;<th width="80px;"></th>&ndash;&gt;-->
-                    <!--<th id="code_td" style="width:40%;">Штрих код</th>-->
-                    <!--<th id="um_td" style="width:50px;">ед.Изм</th>-->
-                    <!--<th id="doc_qty" style="width:50px;">Учетное кол-во</th>-->
-                    <!--<th id="real_qty" style="width:50px;">Факт. кол-во</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-            <!--</table>-->
-
-            <!--<table id="inventoryTable" style=" margin-bottom: 32px;">-->
-            <!--</table>-->
-
-            <!--<table id="tableWithFixedFooter" style="position:fixed; bottom:32px; z-index: 100">-->
-
-                <!--&lt;!&ndash;margin-bottom: 0px; padding-bottom: 60px;&ndash;&gt;-->
-
-                <!--<tfoot>-->
-                <!--<tr  id="footTableFixedHeader" >-->
-                    <!--<td id="totalRowQty">0</td>-->
-                    <!--<td id="totalEmpty" ></td>-->
-                    <!--<td  id="totalDocQty" >0</td>-->
-                    <!--<td id="totalRealQty">0</td>-->
-                <!--</tr>-->
-                <!--</tfoot>-->
-            <!--</table>-->
+            <table id="pInvListContentTable" style=" margin-bottom: 32px;">
+            </table>
         </div>
     </div>
 </div>
