@@ -50,7 +50,7 @@ $$('#my-login-screen .login-button').on('click', function () {
       $$('#my-login-screen [name="password"]').val("");
     });
   }else
-    mainView.router.navigate('/main_content/');
+    mainView.router.navigate('/pInvDetail/');
 });
 
 var rowNum=1;
