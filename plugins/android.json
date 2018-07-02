@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-keyboard": {
-      "PACKAGE_NAME": "com.MyDomain"
-    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.MyDomain"
     },

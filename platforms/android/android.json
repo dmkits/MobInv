@@ -7,12 +7,7 @@
     "files": {
       "config.xml": {
         "parents": {
-          "/*": [
-            {
-              "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.labs.keyboard.Keyboard\" /></feature>",
-              "count": 1
-            }
-          ]
+          "/*": []
         }
       },
       "res/xml/config.xml": {
@@ -32,9 +27,6 @@
     }
   },
   "installed_plugins": {
-    "cordova-plugin-keyboard": {
-      "PACKAGE_NAME": "com.MyDomain"
-    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.MyDomain"
     },
@@ -45,14 +37,6 @@
   "dependent_plugins": {},
   "modules": [
     {
-      "id": "cordova-plugin-keyboard.keyboard",
-      "file": "plugins/cordova-plugin-keyboard/www/keyboard.js",
-      "pluginId": "cordova-plugin-keyboard",
-      "clobbers": [
-        "window.Keyboard"
-      ]
-    },
-    {
       "id": "cordova-plugin-cipherlab-rs30.CipherlabRS30CordovaPlugin",
       "file": "plugins/cordova-plugin-cipherlab-rs30/www/CipherlabRS30CordovaPlugin.js",
       "pluginId": "cordova-plugin-cipherlab-rs30",
@@ -62,7 +46,6 @@
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-keyboard": "1.2.0",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-cipherlab-rs30": "0.0.3"
   }
