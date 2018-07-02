@@ -15,6 +15,7 @@ channel.waitForInitialization('onZebraBarcodePluginReady');
  * @constructor
  */
 function ZebraBarcodePlugin () {
+	channel.onZebraBarcodePluginReady.fire();
 	this.available = false;
 	var me = this;
 
@@ -26,6 +27,8 @@ function ZebraBarcodePlugin () {
 			me.available = false;
 		}, "ZebraBarcodePlugin", "init", []);
 	});
+
+
 }
 
 ZebraBarcodePlugin.prototype.startHardKeyRead = function (successCallback, errorCallback) {
