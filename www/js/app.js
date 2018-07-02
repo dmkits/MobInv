@@ -10,7 +10,9 @@ var app7  = new Framework7({
 });
 
 
- //Init/Create main view
+function getAppObj(){
+  return app7;
+}
 var mainView = app7.views.create('.view-main', {
   url: '/',
   domCache:true
@@ -50,7 +52,8 @@ $$('#my-login-screen .login-button').on('click', function () {
       $$('#my-login-screen [name="password"]').val("");
     });
   }else
-    mainView.router.navigate('/pInvDetail/');
+   // mainView.router.navigate('/inventory/');
+    mainView.router.navigate('/pInvList/');
 });
 
 var rowNum=1;
