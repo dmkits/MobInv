@@ -1,0 +1,67 @@
+1. Install node js id not installed
+
+------ last stable version installation-
+$ sudo apt-get update
+$ sudo apt-get install nodejs
+
+-------or through node version manager
+run this command
+
+curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+change source for installing file by this command
+
+source ~/.bashrc
+now check the version of NVM installed by
+
+nvm --version
+for checking latest available version of node you can run this command in terminal
+
+nvm ls-remote
+
+All version is listed down in your terminal now you can install any of the version available you can use this command
+
+nvm install v6.11.0
+where v6.11.0 is the version of node you can change it accordingly. you can install more than one node version.
+
+Node with v6.11.0 is installed you need to use them by command
+
+nvm use v6.11.0
+
+2. Install Cordova globally
+npm install cordova -g
+
+3.Download and Install AndroidStudio
+
+4. create emulator
+
+(you can create an empty project or open existing one)
+
+AndroidStudio > Tools > AVD Manager
+
+5. install java if not installed
+
+
+6. install Gradle
+
+$ sudo add-apt-repository ppa:cwchien/gradle
+$ sudo apt-get update
+$ sudo apt-get install gradle
+
+
+5. Create an empty cordova progect
+pathTo/yourProgectsFolder: 
+
+$ cordova create ProgectFolderName com.yourUnigueReversedDomainName AppName
+
+6. cordova platform add android
+
+7. set  ENV AND  PATH variables 
+
+export ANDROID_HOME=/home/ianagez/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+
+8. build yuor project. It will crate apk file in projectdirectory/platforms/android/app/build/outputs/apk/debug
+
+$ cordova emulate android
+
+
