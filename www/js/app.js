@@ -56,6 +56,7 @@ $$('#my-login-screen .login-button').on('click', function () {
     mainView.router.navigate('/pInvList/');
 });
 
+
 var rowNum=1;
 
 function createTableRow(barcode){

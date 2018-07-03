@@ -97,16 +97,16 @@ routes = [
           {number:8, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 8"},
           {number:9, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 9"},
           {number:10, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 10"},
-          {number:1, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 1"},
-          {number:2, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 2"},
-          {number:3, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 3"},
-          {number:4, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 4"},
-          {number:5, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 5"},
-          {number:6, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 6"},
-          {number:7, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 7"},
-          {number:8, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 8"},
-          {number:9, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 9"},
-          {number:10, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 10"}
+          {number:11, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 1"},
+          {number:12, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 2"},
+          {number:13, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 3"},
+          {number:14, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 4"},
+          {number:15, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 5"},
+          {number:16, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 6"},
+          {number:17, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 7"},
+          {number:18, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 8"},
+          {number:19, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 9"},
+          {number:20, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 10"}
         ];
 
         if(!pInvList || pInvList.length==0){
@@ -157,12 +157,45 @@ routes = [
 
           tbody.appendChild(trHigher);
           tbody.appendChild(trLower);
+
+          tbody.onclick=function(){
+            console.log('onclick');
+
+            var app=getAppObj();
+            console.log("current",app.views.current);
+            app.views.current.router.navigate('/pInv/'); // + url
+
+            //app.views.current.router.navigate('/pInv/', {
+            //  context:{
+            //    name:"Iana"
+            //    //data:function(){
+            //    //  return pinv;
+            //    //}
+            //  }
+            //});
+          };
           mainTable.appendChild(tbody);
         }
       }
     }
   },
   // Default route (404 page). MUST BE THE LAST\
+  {
+    path: '/pInv/',
+    //content:"",
+    //url: './pages/pInv.html',
+    componentUrl:'./pages/pInv.html'
+    //data: function () {
+    //  return {
+    //    name: 'Iana'
+    //  }
+    //}
+    //on: {
+    //  pageAfterIn: function (event, page){
+    //    page.Template7.compile(page);
+    //  }
+    //}
+  },
   {
     path: '(.*)',
     url: './pages/404.html'

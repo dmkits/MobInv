@@ -1,0 +1,84 @@
+<template>
+    <div class="page " data-name="prod_table">
+        <!-- Top Navbar -->
+        <div class="navbar" id="pInvNavbar">
+            <div class="navbar-inner">
+                <div class="title sliding">Приходня накладная № {{name}} </div>
+                <div class="subnavbar"  id="pInvSubNavbar">
+                    <!--style="background-color: white; padding:0 15px 0 15px;"-->
+
+                    <div class="block">
+                        <p class="row">
+                            <input type="number" name="name" id="barCodeInput"  placeholder="Штрихкод товара">
+                            <!--onblur="this.focus()"-->
+<span>
+<button class="col button button-outline button-round" id="enterRowButton">ВВОД</button>
+    <!--style="background-color: #2196f3; float:right"-->
+    <!--enterBarCode()-->
+</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" >
+            <div class="page-content">
+                <table id="pInvHeaderTable" style="position:fixed; top:104px; z-index: 100">
+                    <thead>
+                    <tr  id="pInvTableHeader">
+                        <th id="pInvNumTd" style="width:50px;">№ п/п</th>
+                        <!--<th width="80px;"></th>-->
+                        <th id="pInvCodeTd" style="width:40%;">Штрих код</th>
+                        <th id="pInvUmTd" style="width:50px;">ед.Изм</th>
+                        <th id="pInvDocQty" style="width:50px;">Учетное кол-во</th>
+                        <th id="pInvRealQty" style="width:50px;">Факт. кол-во</th>
+                    </tr>
+                    </thead>
+                </table>
+
+                <table id="pInvContentTable" style=" margin-bottom: 32px;">
+                </table>
+
+                <table id="pInvFooterTable" style="position:fixed; bottom:32px; z-index: 100">
+
+                    <tfoot>
+                    <tr  id="pInvTableFooter" >
+                        <td id="pInvTotalRowQty">0</td>
+                        <td id="pInvTotalEmpty" ></td>
+                        <td  id="pInvTotalDocQty" >0</td>
+                        <td id="pInvTotalRealQty">0</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    // script must return component object
+    return {
+        data: function () {
+            return {
+                title: 'Component Page',
+                names: ['John', 'Vladimir', 'Timo'],
+            }
+        },
+//        methods: {
+//            openAlert: function () {
+//                var self = this.$app.dialog.alert('Hello world!');
+//            },
+//        },
+        on: {
+            pageInit: function () {
+                alert('pageInit');
+                // do something on page init
+            }
+//            ,
+//            pageAfterOut: function () {
+//                // page has left the view
+//            },
+        }
+    }
+</script>
