@@ -76,10 +76,15 @@ routes = [
             //  }
             //}
           });
+        var maxWidth=document.getElementById("pInvListTableHeader").clientWidth+'px';
 
+        document.getElementById("pInvListTableHeader").style.maxWidth=maxWidth;
+
+        document.getElementById("pInvListHeaderTable").style.maxWidth=maxWidth;
+        document.getElementById("pInvListContentTable").style.maxWidth=maxWidth;
         document.getElementById("pInvListContentTable").style.marginTop=
             ( document.getElementById("pInvListTableHeader").offsetHeight)  +'px';
-        //document.getElementById("pInvListTableHeader").style.position='fixed';
+        document.getElementById("pInvListTableHeader").style.position='fixed';
 
         var pInvList=[
           {number:1, date:"21.04.2018", totalRealQty:120, totalDocQty:130, Warehouse:"Склад 1"},
@@ -120,6 +125,7 @@ routes = [
 
           tdpInvNum.innerText=pinv.number.toString();
           tdpInvNum.style.width=(document.getElementById('pinvNum').offsetWidth-11) + "px";
+          tdpInvNum.style.fontWeight="bold";
           //tdWharehouse.style.width=
           //    ((document.getElementById('pInvListDocQty').offsetWidth-11)
           //        +(document.getElementById('pInvListDocQty').offsetWidth-11)
@@ -129,11 +135,13 @@ routes = [
           trHigher.appendChild(tdpInvNum);
           trHigher.appendChild(tdWharehouse);
           tdWharehouse.colSpan=2;
-
+          tdWharehouse.className="blue-text";
           var trLower=document.createElement('tr');
           var tdDate=document.createElement('td');
           var tdRef=document.createElement('td');
           var tdReal=document.createElement('td');
+          tdRef.className="text-right";
+          tdReal.className="text-right";
 
           trLower.appendChild(tdDate);
           trLower.appendChild(tdRef);
